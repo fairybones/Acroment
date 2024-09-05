@@ -22,7 +22,7 @@ import {
 import ChangeCurrency from "../../src/utils/ChangeCurrency";
 
 // import nav & cart icons
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
 
 const navigation = {
   // UPDATE HREF
@@ -152,7 +152,7 @@ export default function Header() {
             {/* Links */}
             <TabGroup className="mt-2">
               <div className="border-b border-gray-200">
-                <TabList className="-mb-px flex space-x-8 px-4">
+                <TabList className="flex space-x-8 px-4">
                   {navigation.categories.map((category) => (
                     <Tab
                       key={category.name}
@@ -375,12 +375,15 @@ export default function Header() {
                   {/* currency changer */}
                   <div className="hidden lg:ml-8 lg:flex ml-auto">
                     <a href="#" className="flex items-center text-gray-700 hover:text-gray-800">
-                      {/* conditionally render image based on currency selection */}
-                      <img
+                      {/* conditionally render image based on currency selection ? */}
+                      <span className="sr-only">Currency</span>
+                      <CurrencyDollarIcon aria-hidden="true" className="h-4 w-4" />
+
+                      {/* <img
                         alt=""
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       className="block h-auto w-5 flex-shrink-0"
-                    />
+                    /> */}
                     {/* <span className="ml-3 block text-sm font-medium">CAD</span>
                     <span className="sr-only">, change currency</span> */}
                     <ChangeCurrency currentCurrency={currency} setCurrency={setCurrency} />
