@@ -9,6 +9,7 @@
 
   base = "protec-acc/"
   command = "npm run build"
+  publish = "dist/"
   commandOrigin = "config"
   
 # Production context: all deploys from the Production branch
@@ -27,6 +28,7 @@
 [[redirects]]
   from = "/*"
   to = "/shopAll"
+  status = 200
 
 # Use [dev] to set configuration overrides for local
 # development environments run using Netlify Dev - except
