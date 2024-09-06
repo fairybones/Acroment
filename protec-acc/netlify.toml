@@ -9,7 +9,6 @@
 
   base = "protec-acc/"
   command = "npm run build"
-  commandOrigin: config
 
 # A basic redirect rule
 
