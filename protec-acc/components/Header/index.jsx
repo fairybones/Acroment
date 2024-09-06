@@ -1,5 +1,5 @@
 // https://tailwindui.com/components/ecommerce/components/store-navigation
-'use client'
+"use client";
 
 // import necessary packages & components
 import { Fragment, useState } from "react";
@@ -22,7 +22,13 @@ import {
 import ChangeCurrency from "../../src/utils/ChangeCurrency";
 
 // import nav & cart icons
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  MagnifyingGlassIcon,
+  ShoppingBagIcon,
+  XMarkIcon,
+  CurrencyDollarIcon,
+} from "@heroicons/react/24/outline";
 
 const navigation = {
   // UPDATE HREF
@@ -35,89 +41,89 @@ const navigation = {
           name: "New Arrivals",
           href: "#",
           imageSrc: "https://placehold.co/400",
-          imageAlt: "spotlight new products"
+          imageAlt: "spotlight new products",
         },
         {
           name: "Bestsellers",
           href: "#",
           imageSrc: "https://placehold.co/400",
-          imageAlt: "best selling products"
-        }
+          imageAlt: "best selling products",
+        },
       ],
       sections: [
         {
-          id: 'trading',
-          name: 'Trading Cards',
+          id: "trading",
+          name: "Trading Cards",
           items: [
-            { name: 'Card Sleeves', href: '#' },
-            { name: 'Card Slabs', href: '#' },
-            { name: 'Card Stands', href: '#' },
-            { name: 'Browse All', href: '#' },
+            { name: "Card Sleeves", href: "#" },
+            { name: "Card Slabs", href: "#" },
+            { name: "Card Stands", href: "#" },
+            { name: "Browse All", href: "#" },
           ],
         },
         {
-          id: 'display',
-          name: 'Display Cases',
+          id: "display",
+          name: "Display Cases",
           items: [
-            { name: 'Action Figures', href: '#' },
-            { name: 'Comic Books', href: '#' },
-            { name: 'Browse All', href: '#' },
+            { name: "Action Figures", href: "#" },
+            { name: "Comic Books", href: "#" },
+            { name: "Browse All", href: "#" },
           ],
         },
         {
-          id: 'grading',
-          name: 'Grading Accessories',
+          id: "grading",
+          name: "Grading Accessories",
           items: [
-            { name: 'Card Slabs', href: '#' },
-            { name: 'Card Stands', href: '#' },
-            { name: 'Display Cases', href: '#' },
-            { name: 'Browse All', href: '#' },
+            { name: "Card Slabs", href: "#" },
+            { name: "Card Stands", href: "#" },
+            { name: "Display Cases", href: "#" },
+            { name: "Browse All", href: "#" },
           ],
         },
       ],
     },
     {
-      id: 'FAQmenu',
-      name: 'FAQ',
+      id: "FAQmenu",
+      name: "FAQ",
       featured: [
         {
           name: "New Arrivals",
           href: "#",
           imageSrc: "https://placehold.co/400",
-          imageAlt: "spotlight new products"
+          imageAlt: "spotlight new products",
         },
         {
           name: "Bestsellers",
           href: "#",
           imageSrc: "https://placehold.co/400",
-          imageAlt: "best selling products"
-        }
+          imageAlt: "best selling products",
+        },
       ],
       sections: [
         {
-          id: 'FAQ',
-          name: 'Wholesale',
+          id: "FAQ",
+          name: "Wholesale",
           items: [
-            { name: 'FAQ', href: '#' },
-            { name: 'Contact Us', href: '#' },
+            { name: "FAQ", href: "#" },
+            { name: "Contact Us", href: "#" },
           ],
         },
         {
-          id: 'warranty',
-          name: 'Warranty',
+          id: "warranty",
+          name: "Warranty",
           items: [
-            { name: 'FAQ', href: '#' },
-            { name: 'Form', href: '#' },
+            { name: "FAQ", href: "#" },
+            { name: "Form", href: "#" },
           ],
         },
       ],
     },
   ],
   pages: [
-    { name: 'Warranty', href: '#' },
-    { name: 'Wholesale', href: '#' },
+    { name: "Warranty", href: "#" },
+    { name: "Wholesale", href: "#" },
   ],
-}
+};
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -165,15 +171,28 @@ export default function Header() {
               </div>
               <TabPanels as={Fragment}>
                 {navigation.categories.map((category) => (
-                  <TabPanel key={category.name} className="space-y-10 px-4 pb-8 pt-10">
+                  <TabPanel
+                    key={category.name}
+                    className="space-y-10 px-4 pb-8 pt-10"
+                  >
                     <div className="grid grid-cols-2 gap-x-4">
                       {category.featured.map((item) => (
                         <div key={item.name} className="group relative text-sm">
                           <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                            <img alt={item.imageAlt} src={item.imageSrc} className="object-cover object-center" />
+                            <img
+                              alt={item.imageAlt}
+                              src={item.imageSrc}
+                              className="object-cover object-center"
+                            />
                           </div>
-                          <a href={item.href} className="mt-6 block font-medium text-gray-900">
-                            <span aria-hidden="true" className="absolute inset-0 z-10" />
+                          <a
+                            href={item.href}
+                            className="mt-6 block font-medium text-gray-900"
+                          >
+                            <span
+                              aria-hidden="true"
+                              className="absolute inset-0 z-10"
+                            />
                             {item.name}
                           </a>
                           <p aria-hidden="true" className="mt-1">
@@ -184,7 +203,10 @@ export default function Header() {
                     </div>
                     {category.sections.map((section) => (
                       <div key={section.name}>
-                        <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900">
+                        <p
+                          id={`${category.id}-${section.id}-heading-mobile`}
+                          className="font-medium text-gray-900"
+                        >
                           {section.name}
                         </p>
                         <ul
@@ -194,7 +216,10 @@ export default function Header() {
                         >
                           {section.items.map((item) => (
                             <li key={item.name} className="flow-root">
-                              <a href={item.href} className="-m-2 block p-2 text-gray-500">
+                              <a
+                                href={item.href}
+                                className="-m-2 block p-2 text-gray-500"
+                              >
                                 {item.name}
                               </a>
                             </li>
@@ -210,7 +235,10 @@ export default function Header() {
             <div className="space-y-6 border-t border-gray-200 px-4 py-6">
               {navigation.pages.map((page) => (
                 <div key={page.name} className="flow-root">
-                  <a href={page.href} className="-m-2 block p-2 font-medium text-gray-900">
+                  <a
+                    href={page.href}
+                    className="-m-2 block p-2 font-medium text-gray-900"
+                  >
                     {page.name}
                   </a>
                 </div>
@@ -237,7 +265,9 @@ export default function Header() {
                   src="https://tailwindui.com/img/flags/flag-canada.svg"
                   className="block h-auto w-5 flex-shrink-0"
                 />
-                <span className="ml-3 block text-base font-medium text-gray-900">CAD</span>
+                <span className="ml-3 block text-base font-medium text-gray-900">
+                  CAD
+                </span>
                 <span className="sr-only">, change currency</span>
               </a>
             </div>
@@ -250,15 +280,18 @@ export default function Header() {
           Oooo exclusive offer!
         </p>
 
-        <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav
+          aria-label="Top"
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        >
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
               <button
                 type="button"
                 onClick={() => setOpen(true)}
                 className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
-              > 
-              {/* nav icon */}
+              >
+                {/* nav icon */}
                 <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open menu</span>
                 <Bars3Icon aria-hidden="true" className="h-6 w-6" />
@@ -292,14 +325,20 @@ export default function Header() {
                         className="absolute inset-x-0 top-full z-50 text-sm text-gray-500 transition data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
                       >
                         {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                        <div aria-hidden="true" className="absolute inset-0 top-1/2 bg-white shadow" />
+                        <div
+                          aria-hidden="true"
+                          className="absolute inset-0 top-1/2 bg-white shadow"
+                        />
 
                         <div className="relative bg-white">
                           <div className="mx-auto max-w-7xl px-8 pb-10">
                             <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
                               <div className="col-start-2 grid grid-cols-2 gap-x-8">
                                 {category.featured.map((item) => (
-                                  <div key={item.name} className="group relative text-base sm:text-sm">
+                                  <div
+                                    key={item.name}
+                                    className="group relative text-base sm:text-sm"
+                                  >
                                     <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-white group-hover:opacity-75">
                                       <img
                                         alt={item.imageAlt}
@@ -307,8 +346,14 @@ export default function Header() {
                                         className="object-cover object-center"
                                       />
                                     </div>
-                                    <a href={item.href} className="mt-6 block font-medium text-gray-900">
-                                      <span aria-hidden="true" className="absolute inset-0 z-10" />
+                                    <a
+                                      href={item.href}
+                                      className="mt-6 block font-medium text-gray-900"
+                                    >
+                                      <span
+                                        aria-hidden="true"
+                                        className="absolute inset-0 z-10"
+                                      />
                                       {item.name}
                                     </a>
                                     <p aria-hidden="true" className="mt-1">
@@ -320,7 +365,10 @@ export default function Header() {
                               <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
                                 {category.sections.map((section) => (
                                   <div key={section.name}>
-                                    <p id={`${section.name}-heading`} className="font-medium text-gray-900">
+                                    <p
+                                      id={`${section.name}-heading`}
+                                      className="font-medium text-gray-900"
+                                    >
                                       {section.name}
                                     </p>
                                     <ul
@@ -330,7 +378,10 @@ export default function Header() {
                                     >
                                       {section.items.map((item) => (
                                         <li key={item.name} className="flex">
-                                          <a href={item.href} className="hover:text-gray-800">
+                                          <a
+                                            href={item.href}
+                                            className="hover:text-gray-800"
+                                          >
                                             {item.name}
                                           </a>
                                         </li>
@@ -371,22 +422,31 @@ export default function Header() {
                   </a>
                 </div> */}
 
-                <div className="ml-auto flex items-center space-x-6">
-                  {/* currency changer */}
-                  <div className="hidden lg:ml-8 lg:flex ml-auto">
-                    <a href="#" className="flex items-center text-gray-700 hover:text-gray-800">
-                      {/* conditionally render image based on currency selection ? */}
-                      <span className="sr-only">Currency</span>
-                      <CurrencyDollarIcon aria-hidden="true" className="h-4 w-4" />
+              <div className="ml-auto flex items-center space-x-6">
+                {/* currency changer */}
+                <div className="hidden lg:ml-8 lg:flex ml-auto">
+                  <a
+                    href="#"
+                    className="flex items-center text-gray-700 hover:text-gray-800"
+                  >
+                    {/* conditionally render image based on currency selection ? */}
+                    <span className="sr-only">Currency</span>
+                    <CurrencyDollarIcon
+                      aria-hidden="true"
+                      className="h-4 w-4"
+                    />
 
-                      {/* <img
+                    {/* <img
                         alt=""
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       className="block h-auto w-5 flex-shrink-0"
                     /> */}
                     {/* <span className="ml-3 block text-sm font-medium">CAD</span>
                     <span className="sr-only">, change currency</span> */}
-                    <ChangeCurrency currentCurrency={currency} setCurrency={setCurrency} />
+                    <ChangeCurrency
+                      currentCurrency={currency}
+                      setCurrency={setCurrency}
+                    />
                   </a>
                 </div>
 
@@ -394,7 +454,10 @@ export default function Header() {
                 <div className="flex lg:ml-6">
                   <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
-                    <MagnifyingGlassIcon aria-hidden="true" className="h-6 w-6" />
+                    <MagnifyingGlassIcon
+                      aria-hidden="true"
+                      className="h-6 w-6"
+                    />
                   </a>
                 </div>
 
@@ -406,7 +469,10 @@ export default function Header() {
                       aria-hidden="true"
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                     />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                    {/* UPDATE # of items in cart */}
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                      0
+                    </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </a>
                 </div>
@@ -416,5 +482,5 @@ export default function Header() {
         </nav>
       </header>
     </div>
-  )
+  );
 }
