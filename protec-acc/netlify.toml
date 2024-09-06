@@ -15,7 +15,7 @@
   # This sample publishes the directory located at the absolute 
   # path "root/project/build-output"
 
-  publish = "/opt/build/repo/protec-acc/output"
+  publish = "/opt/build/acroment/protec-acc/output"
   publishOrigin = "config"
 
   # Default build command.
