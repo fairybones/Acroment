@@ -6,6 +6,9 @@ export default defineConfig({
   base: "/protec-acc/",
   build: {
     outDir: "dist",
+    rollupOptions: {
+      external: ["/protec-acc/src/main.jsx"],
+    },
   },
   plugins: [react()],
   server: {
