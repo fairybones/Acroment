@@ -11,30 +11,11 @@
   command = "npm run build"
   commandOrigin: config
 
-# Production context: all deploys from the Production branch
-# set in your site’s Branches settings in the UI will inherit
-# these settings. You can define environment variables
-# here but we recommend using the Netlify UI for sensitive
-# values to keep them out of your source repository.
-
-[context.production]
-  command = "npm run build"
-  environment = { NODE_VERSION = "20.17.0" }
-  publish = "protec-acc/dist/"
-  publishOrigin: config
-
-# Deploy Preview context: all deploys generated from
-# a pull/merge request will inherit these settings.
-
-[context.deploy-preview]
-  publish = "dist/"
-
 # A basic redirect rule
 
 [[redirects]]
   from = "/*"
   to = "/shopAll"
-  redirectsOrigin: config
 
 # Use [dev] to set configuration overrides for local
 # development environments run using Netlify Dev - except
