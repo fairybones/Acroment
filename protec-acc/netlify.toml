@@ -48,6 +48,6 @@
 # Dev should be set under [context.dev.environment] instead.
 
 [dev]
-  command = "npm run build"
+  command = "vite build"
   port = 3000
   publish = "dist"
