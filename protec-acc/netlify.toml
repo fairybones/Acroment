@@ -88,4 +88,4 @@
 # A basic redirect rule
 [[redirects]]
   from = "/*"
-  to = "/home"
+  to = "/shopAll"
