@@ -20,7 +20,7 @@
 
 [context.production]
   publish = "dist/"
-  command = "npm run build"
+  command = "vite build"
   environment = { NODE_VERSION = "20.17.0" }
 
 # Use [dev] to set configuration overrides for local
