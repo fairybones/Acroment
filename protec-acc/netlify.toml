@@ -8,8 +8,8 @@
   # If not set, defaults to the root directory.
 
   base = "protec-acc/"
-  publish = "protec-acc/dist/"
   command = "npm run build"
+  commandOrigin: config
 
 # Production context: all deploys from the Production branch
 # set in your site’s Branches settings in the UI will inherit
@@ -18,9 +18,10 @@
 # values to keep them out of your source repository.
 
 [context.production]
-  publish = "dist/"
   command = "npm run build"
-  environment = { NODE_VERSION = "14.15.3" }
+  environment = { NODE_VERSION = "20.17.0" }
+  publish = "protec-acc/dist/"
+  publishOrigin: config
 
 # Deploy Preview context: all deploys generated from
 # a pull/merge request will inherit these settings.
@@ -33,6 +34,7 @@
 [[redirects]]
   from = "/*"
   to = "/shopAll"
+  redirectsOrigin: config
 
 # Use [dev] to set configuration overrides for local
 # development environments run using Netlify Dev - except
