@@ -9,8 +9,8 @@
 
   base = "protec-acc/"
   command = "npm run build"
-  publish = "dist/"
   commandOrigin = "config"
+  publish = "dist/"
   
 # Production context: all deploys from the Production branch
 # set in your site’s Branches settings in the UI will inherit
