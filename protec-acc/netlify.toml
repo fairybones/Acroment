@@ -16,16 +16,10 @@
   # path "root/project/build-output"
 
   publish = "/opt/build/repo/protec-acc/output"
-  publishOrigin: "config"
+  publishOrigin = "config"
 
   # Default build command.
   command = "make publish"
-
-[[plugins]]
-  # Installs the Lighthouse Build Plugin for all deploy contexts
-  inputs: {}
-  origin: config
-  package = "@netlify/plugin-lighthouse"
 
 # Production context: all deploys from the Production branch
 # set in your site’s Branches settings in the UI will inherit
@@ -43,23 +37,6 @@
 [context.deploy-preview]
   publish = "dist/"
 
-# Here is an example of how to define context-specific
-# environment variables. To avoid committing sensitive
-# values to public source repositories, set variables
-# with the Netlify UI, CLI, or API instead.
-[context.deploy-preview.environment]
-
-  NOT_PRIVATE_ITEM = "not so secret"
-
-# Branch Deploy context: all deploys that are not from
-# a pull/merge request or from the Production branch
-# will inherit these settings.
-
-[context.branch-deploy]
-  command = "echo branch"
-[context.branch-deploy.environment]
-  NODE_ENV = "development"
-
 # Dev context: environment variables set here
 # are available for local development environments
 # run using Netlify Dev. These values can be
@@ -68,25 +45,6 @@
 
 [context.dev.environment]
   NODE_ENV = "development"
-
-# Specific branch context: all deploys from
-# this specific branch will inherit these settings.
-
-[context.staging] # “staging” is a branch name
-  command = "echo 'staging'"
-  base = "staging"
-
-# For contexts of branches with special characters,
-# enclose the branch name with quotes.
-
-[context."feat/branch"]
-  command = "echo 'special branch'"
-  base = "branch"
-
-# Redirects and headers are GLOBAL for all builds – they do not
-# get scoped to contexts no matter where you define them in the file.
-# For context-specific rules, use _headers or _redirects files,
-# which are PER-DEPLOY.
 
 # A basic redirect rule
 [[redirects]]
