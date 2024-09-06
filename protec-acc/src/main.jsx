@@ -24,30 +24,6 @@ const router = createBrowserRouter([
         path: '/shopAll',
         element: <ShopAll />,
       },
-      // {
-      //   path: 'warrantyFAQ',
-      //   element: <Warranty />,
-      // },
-      // {
-      //   path: 'wholesale',
-      //   element: <Wholesale />,
-      // },
-      // {
-      //   path: 'tradeCards',
-      //   element: <TradeCards />,
-      // },
-      // {
-      //   path: 'gradeCards',
-      //   element: <GradeCards />,
-      // },
-      // {
-      //   path: 'actionfigures',
-      //   element: <DisplayCase />,
-      // },
-      // {
-      //   path: 'comicsandbooks',
-      //   element: <DisplayCase />,
-      // },
     ],
   },
 ]);

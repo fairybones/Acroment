@@ -23,13 +23,6 @@
   command = "npm run build"
   environment = { NODE_VERSION = "20.17.0" }
 
-# A basic redirect rule
-
-[[redirects]]
-  from = "/*"
-  to = "/shopAll"
-  status = 200
-
 # Use [dev] to set configuration overrides for local
 # development environments run using Netlify Dev - except
 # for environment variables. Environment variables for Netlify
@@ -39,3 +32,15 @@
   command = "npm run dev"
   port = 3000
   publish = "dist/"
+
+# A basic redirect rule
+
+[[redirects]]
+  from = "/*"
+  to = "/shopAll"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Type = "application/javascript"
